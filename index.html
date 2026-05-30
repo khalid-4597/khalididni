@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="so">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio — Developer</title>
+<title>Portfolio — Khalid Muhidin Mohamed</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -19,9 +19,7 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
-
   body {
     background: var(--bg);
     color: var(--text);
@@ -30,46 +28,33 @@
     cursor: none;
   }
 
-  /* Custom Cursor */
   .cursor {
-    position: fixed;
-    width: 12px; height: 12px;
-    background: var(--accent);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.1s ease;
-    mix-blend-mode: screen;
+    position: fixed; width: 12px; height: 12px;
+    background: var(--accent); border-radius: 50%;
+    pointer-events: none; z-index: 9999;
+    transition: transform 0.1s ease; mix-blend-mode: screen;
   }
   .cursor-ring {
-    position: fixed;
-    width: 40px; height: 40px;
-    border: 1.5px solid rgba(0,229,255,0.5);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9998;
+    position: fixed; width: 40px; height: 40px;
+    border: 1.5px solid rgba(0,229,255,0.5); border-radius: 50%;
+    pointer-events: none; z-index: 9998;
     transition: transform 0.15s ease, width 0.2s, height 0.2s;
   }
 
-  /* Noise overlay */
   body::before {
     content: '';
     position: fixed; inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 1000;
-    opacity: 0.4;
+    pointer-events: none; z-index: 1000; opacity: 0.4;
   }
 
-  /* Grid bg */
   .grid-bg {
     position: fixed; inset: 0;
     background-image:
       linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
       linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
     background-size: 60px 60px;
-    pointer-events: none;
-    z-index: 0;
+    pointer-events: none; z-index: 0;
   }
 
   /* NAV */
@@ -93,140 +78,79 @@
 
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a {
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.2s;
-    position: relative;
+    font-size: 0.85rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    transition: color 0.2s; position: relative;
   }
   .nav-links a::after {
-    content: '';
-    position: absolute; bottom: -4px; left: 0;
-    width: 0; height: 1px;
-    background: var(--accent);
+    content: ''; position: absolute; bottom: -4px; left: 0;
+    width: 0; height: 1px; background: var(--accent);
     transition: width 0.3s ease;
   }
   .nav-links a:hover { color: var(--accent); }
   .nav-links a:hover::after { width: 100%; }
 
   .nav-btn {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.8rem;
-    padding: 0.6rem 1.4rem;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    background: transparent;
-    border-radius: 2px;
-    cursor: none;
-    letter-spacing: 0.1em;
-    transition: all 0.2s;
+    font-family: 'Space Mono', monospace; font-size: 0.8rem;
+    padding: 0.6rem 1.4rem; border: 1px solid var(--accent);
+    color: var(--accent); background: transparent; border-radius: 2px;
+    cursor: none; letter-spacing: 0.1em; transition: all 0.2s;
     text-decoration: none;
   }
   .nav-btn:hover { background: var(--accent); color: var(--bg); }
 
   /* HERO */
   .hero {
-    min-height: 100vh;
-    display: flex; align-items: center;
-    padding: 8rem 4rem 4rem;
-    position: relative;
-    z-index: 1;
+    min-height: 100vh; display: flex; align-items: center;
+    padding: 8rem 4rem 4rem; position: relative; z-index: 1;
   }
-
   .hero-content { max-width: 750px; }
-
   .hero-tag {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--accent);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
-    display: flex; align-items: center; gap: 0.8rem;
+    font-family: 'Space Mono', monospace; font-size: 0.78rem;
+    color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem;
   }
-  .hero-tag::before {
-    content: '';
-    width: 30px; height: 1px;
-    background: var(--accent);
-  }
-
+  .hero-tag::before { content: ''; width: 30px; height: 1px; background: var(--accent); }
   .hero h1 {
-    font-size: clamp(3rem, 7vw, 5.5rem);
-    font-weight: 800;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    margin-bottom: 1rem;
+    font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 800;
+    line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 1rem;
   }
-
   .hero h1 .name-accent {
-    color: transparent;
-    -webkit-text-stroke: 1.5px var(--accent);
-    display: block;
+    color: transparent; -webkit-text-stroke: 1.5px var(--accent); display: block;
   }
-
   .hero-sub {
-    font-family: 'Space Mono', monospace;
-    font-size: 1rem;
-    color: var(--muted);
-    margin-bottom: 2rem;
-    line-height: 1.7;
-    max-width: 480px;
+    font-family: 'Space Mono', monospace; font-size: 1rem;
+    color: var(--muted); margin-bottom: 2rem; line-height: 1.7; max-width: 480px;
   }
-
   .hero-sub .typed-text { color: var(--accent); }
-
   .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2.5rem; }
 
   .btn-primary {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.82rem;
-    padding: 0.9rem 2rem;
-    background: var(--accent);
-    color: var(--bg);
-    border: none;
-    border-radius: 2px;
-    cursor: none;
-    letter-spacing: 0.08em;
-    font-weight: 700;
-    transition: all 0.25s;
-    text-decoration: none;
+    font-family: 'Space Mono', monospace; font-size: 0.82rem;
+    padding: 0.9rem 2rem; background: var(--accent); color: var(--bg);
+    border: none; border-radius: 2px; cursor: none; letter-spacing: 0.08em;
+    font-weight: 700; transition: all 0.25s; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;
   }
   .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,229,255,0.3); }
 
   .btn-outline {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.82rem;
-    padding: 0.9rem 2rem;
-    border: 1px solid var(--border);
-    color: var(--text);
-    background: transparent;
-    border-radius: 2px;
-    cursor: none;
-    letter-spacing: 0.08em;
-    transition: all 0.25s;
-    text-decoration: none;
+    font-family: 'Space Mono', monospace; font-size: 0.82rem;
+    padding: 0.9rem 2rem; border: 1px solid var(--border);
+    color: var(--text); background: transparent; border-radius: 2px;
+    cursor: none; letter-spacing: 0.08em; transition: all 0.25s; text-decoration: none;
   }
   .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
   /* Floating code block */
   .hero-code {
-    position: absolute;
-    right: 4rem; top: 50%;
+    position: absolute; right: 4rem; top: 50%;
     transform: translateY(-50%);
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.5rem;
-    font-family: 'Space Mono', monospace;
-    font-size: 0.75rem;
-    line-height: 1.8;
-    color: var(--muted);
-    max-width: 340px;
-    box-shadow: var(--glow);
-    animation: float 6s ease-in-out infinite;
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 8px; padding: 1.5rem;
+    font-family: 'Space Mono', monospace; font-size: 0.75rem;
+    line-height: 1.8; color: var(--muted); max-width: 340px;
+    box-shadow: var(--glow); animation: float 6s ease-in-out infinite;
   }
   @keyframes float {
     0%, 100% { transform: translateY(-50%) translateY(0); }
@@ -237,7 +161,6 @@
   .hero-code .c-str { color: #86efac; }
   .hero-code .c-comment { color: #475569; }
   .hero-code .c-accent { color: var(--accent); }
-
   .code-header {
     display: flex; align-items: center; gap: 6px;
     margin-bottom: 1rem; padding-bottom: 0.8rem;
@@ -250,293 +173,199 @@
 
   /* STATS */
   .stats-bar {
-    position: relative; z-index: 1;
-    padding: 3rem 4rem;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    display: flex; gap: 4rem; flex-wrap: wrap;
-    background: var(--bg2);
+    position: relative; z-index: 1; padding: 3rem 4rem;
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    display: flex; gap: 4rem; flex-wrap: wrap; background: var(--bg2);
   }
-
   .stat { display: flex; flex-direction: column; gap: 0.3rem; }
   .stat-num {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--accent);
-    font-family: 'Space Mono', monospace;
-    line-height: 1;
+    font-size: 2.5rem; font-weight: 800; color: var(--accent);
+    font-family: 'Space Mono', monospace; line-height: 1;
   }
   .stat-label { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
 
   /* SECTIONS */
   section { position: relative; z-index: 1; padding: 6rem 4rem; }
-
   .section-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--accent);
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    margin-bottom: 0.8rem;
-    display: flex; align-items: center; gap: 0.8rem;
+    font-family: 'Space Mono', monospace; font-size: 0.72rem;
+    color: var(--accent); letter-spacing: 0.25em; text-transform: uppercase;
+    margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;
   }
   .section-label::before { content: '//'; color: var(--muted); }
-
   .section-title {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    margin-bottom: 3rem;
+    font-size: clamp(2rem, 4vw, 3rem); font-weight: 800;
+    letter-spacing: -0.02em; margin-bottom: 3rem;
   }
 
   /* SKILLS */
   .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1px; background: var(--border); border: 1px solid var(--border);
   }
-
   .skill-card {
-    background: var(--bg2);
-    padding: 2rem;
-    transition: background 0.2s;
-    position: relative; overflow: hidden;
+    background: var(--bg2); padding: 2rem;
+    transition: background 0.2s; position: relative; overflow: hidden;
   }
   .skill-card::before {
-    content: '';
-    position: absolute; top: 0; left: 0;
-    width: 3px; height: 0;
-    background: var(--accent);
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 3px; height: 0; background: var(--accent);
     transition: height 0.3s ease;
   }
   .skill-card:hover { background: var(--bg3); }
   .skill-card:hover::before { height: 100%; }
-
-  .skill-icon {
-    font-size: 1.6rem; margin-bottom: 1rem;
-    display: block;
-  }
-  .skill-name {
-    font-size: 1rem; font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
+  .skill-icon { font-size: 1.6rem; margin-bottom: 1rem; display: block; }
+  .skill-name { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
   .skill-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
-
   .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
   .skill-tag {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
-    padding: 0.25rem 0.6rem;
-    background: rgba(0,229,255,0.07);
-    border: 1px solid rgba(0,229,255,0.15);
-    color: var(--accent);
-    border-radius: 2px;
-    letter-spacing: 0.05em;
+    font-family: 'Space Mono', monospace; font-size: 0.65rem;
+    padding: 0.25rem 0.6rem; background: rgba(0,229,255,0.07);
+    border: 1px solid rgba(0,229,255,0.15); color: var(--accent);
+    border-radius: 2px; letter-spacing: 0.05em;
   }
 
   /* PROJECTS */
   .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     gap: 1.5rem;
   }
-
   .project-card {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    overflow: hidden;
-    transition: transform 0.25s, box-shadow 0.25s;
-    position: relative;
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 4px; overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s; position: relative;
   }
   .project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--glow);
+    transform: translateY(-4px); box-shadow: var(--glow);
     border-color: rgba(0,229,255,0.3);
   }
-
   .project-top {
     padding: 1.8rem;
     background: linear-gradient(135deg, var(--bg3), var(--bg2));
-    border-bottom: 1px solid var(--border);
-    min-height: 120px;
-    display: flex; align-items: flex-end;
-    position: relative;
+    border-bottom: 1px solid var(--border); min-height: 120px;
+    display: flex; align-items: flex-end; position: relative;
   }
-
   .project-num {
     position: absolute; top: 1.2rem; right: 1.5rem;
-    font-family: 'Space Mono', monospace;
-    font-size: 3rem;
-    font-weight: 700;
-    color: rgba(0,229,255,0.06);
-    line-height: 1;
+    font-family: 'Space Mono', monospace; font-size: 3rem;
+    font-weight: 700; color: rgba(0,229,255,0.06); line-height: 1;
   }
-
   .project-body { padding: 1.8rem; }
-  .project-name {
-    font-size: 1.1rem; font-weight: 700;
-    margin-bottom: 0.6rem;
-  }
+  .project-name { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.6rem; }
   .project-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
-
   .project-footer {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 1rem 1.8rem;
-    border-top: 1px solid var(--border);
+    padding: 1rem 1.8rem; border-top: 1px solid var(--border);
   }
-
   .project-links { display: flex; gap: 1rem; }
   .project-link {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--accent);
-    text-decoration: none;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    display: flex; align-items: center; gap: 0.4rem;
+    font-family: 'Space Mono', monospace; font-size: 0.7rem;
+    color: var(--accent); text-decoration: none; letter-spacing: 0.1em;
+    text-transform: uppercase; display: flex; align-items: center; gap: 0.4rem;
     transition: opacity 0.2s;
   }
   .project-link:hover { opacity: 0.7; }
-
   .project-stack { display: flex; flex-wrap: wrap; gap: 0.35rem; }
   .stack-tag {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
-    padding: 0.2rem 0.5rem;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    color: var(--muted);
-    border-radius: 2px;
+    font-family: 'Space Mono', monospace; font-size: 0.6rem;
+    padding: 0.2rem 0.5rem; background: var(--bg);
+    border: 1px solid var(--border); color: var(--muted); border-radius: 2px;
   }
+
+  /* GitHub Banner */
+  .github-banner {
+    margin-top: 3rem; padding: 2rem;
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 4px; display: flex; align-items: center;
+    justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;
+  }
+  .github-banner-text .sub {
+    font-family: 'Space Mono', monospace; font-size: 0.72rem;
+    color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem;
+  }
+  .github-banner-text h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .github-banner-text p { font-size: 0.82rem; color: var(--muted); }
 
   /* EXPERIENCE */
   .exp-list { display: flex; flex-direction: column; gap: 0; }
-
   .exp-item {
     display: grid; grid-template-columns: 200px 1fr;
-    gap: 3rem;
-    padding: 2.5rem 0;
-    border-bottom: 1px solid var(--border);
-    position: relative;
+    gap: 3rem; padding: 2.5rem 0;
+    border-bottom: 1px solid var(--border); position: relative;
   }
   .exp-item::before {
-    content: '';
-    position: absolute; left: 0; top: 0;
-    width: 0; height: 1px;
-    background: var(--accent);
+    content: ''; position: absolute; left: 0; top: 0;
+    width: 0; height: 1px; background: var(--accent);
     transition: width 0.4s ease;
   }
   .exp-item:hover::before { width: 100%; }
-
   .exp-date {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--muted);
-    padding-top: 0.2rem;
-    letter-spacing: 0.05em;
+    font-family: 'Space Mono', monospace; font-size: 0.75rem;
+    color: var(--muted); padding-top: 0.2rem; letter-spacing: 0.05em;
   }
   .exp-role { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
   .exp-company { font-size: 0.85rem; color: var(--accent); margin-bottom: 0.8rem; font-family: 'Space Mono', monospace; }
   .exp-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
 
   /* CONTACT */
-  .contact-section {
-    background: var(--bg2);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .contact-inner {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-  }
-
+  .contact-section { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
   .contact-left h2 { font-size: 2.8rem; font-weight: 800; line-height: 1.1; margin-bottom: 1.2rem; }
   .contact-left p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
-
   .contact-links { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
   .contact-link {
     display: flex; align-items: center; gap: 1rem;
-    text-decoration: none; color: var(--text);
-    font-size: 0.9rem;
-    padding: 1rem 1.2rem;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    transition: all 0.2s;
-    background: var(--bg);
+    text-decoration: none; color: var(--text); font-size: 0.9rem;
+    padding: 1rem 1.2rem; border: 1px solid var(--border);
+    border-radius: 4px; transition: all 0.2s; background: var(--bg);
   }
   .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateX(4px); }
   .contact-link .icon { font-size: 1.2rem; }
   .contact-link .label { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--muted); }
 
+  /* FORM */
   .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-
   .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
   .form-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    font-family: 'Space Mono', monospace; font-size: 0.7rem;
+    color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;
   }
   .form-input, .form-textarea {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 0.8rem 1rem;
-    font-family: 'Syne', sans-serif;
-    font-size: 0.9rem;
-    border-radius: 2px;
-    outline: none;
-    transition: border-color 0.2s;
-    cursor: none;
+    background: var(--bg); border: 1px solid var(--border);
+    color: var(--text); padding: 0.8rem 1rem;
+    font-family: 'Syne', sans-serif; font-size: 0.9rem;
+    border-radius: 2px; outline: none; transition: border-color 0.2s; cursor: text;
   }
   .form-input:focus, .form-textarea:focus { border-color: var(--accent); }
   .form-textarea { height: 120px; resize: vertical; }
 
+  .form-status {
+    font-family: 'Space Mono', monospace; font-size: 0.78rem;
+    padding: 0.7rem 1rem; border-radius: 2px; display: none;
+  }
+  .form-status.success { background: rgba(74,222,128,0.1); border: 1px solid rgba(74,222,128,0.3); color: #4ade80; }
+  .form-status.error { background: rgba(248,113,113,0.1); border: 1px solid rgba(248,113,113,0.3); color: #f87171; }
+
   /* FOOTER */
   footer {
-    position: relative; z-index: 1;
-    padding: 2rem 4rem;
+    position: relative; z-index: 1; padding: 2rem 4rem;
     display: flex; justify-content: space-between; align-items: center;
     border-top: 1px solid var(--border);
   }
-  .footer-left {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--muted);
-  }
-  .footer-right {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--muted);
-  }
+  .footer-left { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--muted); }
+  .footer-right { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--muted); }
   .footer-right span { color: var(--accent); }
 
-  /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
   }
-
-  .hero-content > * {
-    opacity: 0;
-    animation: fadeUp 0.7s ease forwards;
-  }
+  .hero-content > * { opacity: 0; animation: fadeUp 0.7s ease forwards; }
   .hero-tag { animation-delay: 0.1s; }
   .hero h1 { animation-delay: 0.25s; }
   .hero-sub { animation-delay: 0.4s; }
   .hero-actions { animation-delay: 0.55s; }
+  .hero-code { opacity: 0; animation: fadeUp 0.7s ease 0.7s forwards; }
 
-  .hero-code {
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.7s forwards;
-  }
-
-  /* Scrollbar */
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
@@ -551,6 +380,7 @@
     .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
     .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
     footer { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .github-banner { flex-direction: column; }
   }
 </style>
 </head>
@@ -560,33 +390,33 @@
 <div class="cursor-ring" id="cursorRing"></div>
 <div class="grid-bg"></div>
 
-<!-- NAV -->
+<!-- NAV — FIXED: <dev> logo corrected -->
 <nav>
-  <div class="nav-logo">&lt;<span>dev</span>/&gt;</div>
+  <div class="nav-logo">&lt;<span>dev</span>&gt;</div>
   <ul class="nav-links">
-    <li><a href="#xirfad">Xirfad</a></li>
-    <li><a href="#mashruuc">Mashruuc</a></li>
-    <li><a href="#waayo">Waayo-aragnimo</a></li>
-    <li><a href="#xiriir">Xiriir</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="#xiriir" class="nav-btn">Hadal ›</a>
+  <a href="#contact" class="nav-btn">Let's Talk ›</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-tag">Full-Stack Developer · Muqdisho, Soomaaliya</div>
+    <div class="hero-tag">Full-Stack Developer · Mogadishu, Somalia</div>
     <h1>
-     khalid<br>
-      <span class="name-accent">muhidin mohamed</span>
+      Khalid<br>
+      <span class="name-accent">Muhidin Mohamed</span>
     </h1>
     <p class="hero-sub">
-      Waxaan dhiso <span class="typed-text" id="typed"></span><br>
-      Kood cusub. Fikrad cusub. Mustaqbal cusub.
+      I build <span class="typed-text" id="typed"></span><br>
+      Fresh code. Fresh ideas. Fresh future.
     </p>
     <div class="hero-actions">
-      <a href="#mashruuc" class="btn-primary">Arag Shaqadayda</a>
-      <a href="#xiriir" class="btn-outline">ila soo xiriir →</a>
+      <a href="#projects" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-outline">Get In Touch →</a>
     </div>
   </div>
 
@@ -596,14 +426,14 @@
       <span style="font-size:0.65rem;color:var(--muted);margin-left:auto">portfolio.js</span>
     </div>
     <div><span class="c-keyword">const</span> <span class="c-fn">developer</span> = {</div>
-    <div>&nbsp;&nbsp;<span class="c-accent">magac</span>: <span class="c-str">"khalid"</span>,</div>
-    <div>&nbsp;&nbsp;<span class="c-accent">xirfad</span>: [<span class="c-str">"React"</span>, <span class="c-str">"Node"</span>],</div>
-    <div>&nbsp;&nbsp;<span class="c-accent">goob</span>: <span class="c-str">"Mogadishu 🇸🇴"</span>,</div>
-    <div>&nbsp;&nbsp;<span class="c-accent">diyaar</span>: <span class="c-keyword">true</span>,</div>
+    <div>&nbsp;&nbsp;<span class="c-accent">name</span>: <span class="c-str">"Khalid"</span>,</div>
+    <div>&nbsp;&nbsp;<span class="c-accent">skills</span>: [<span class="c-str">"React"</span>, <span class="c-str">"Node"</span>],</div>
+    <div>&nbsp;&nbsp;<span class="c-accent">location</span>: <span class="c-str">"Mogadishu 🇸🇴"</span>,</div>
+    <div>&nbsp;&nbsp;<span class="c-accent">available</span>: <span class="c-keyword">true</span>,</div>
     <div>};</div>
     <br>
-    <div><span class="c-comment">// Shaqo fiican, natiijooyinka wanaagsan</span></div>
-    <div><span class="c-fn">console</span>.<span class="c-fn">log</span>(<span class="c-str">"Ku soo dhowow! 👋"</span>);</div>
+    <div><span class="c-comment">// Good work, great results</span></div>
+    <div><span class="c-fn">console</span>.<span class="c-fn">log</span>(<span class="c-str">"Welcome! 👋"</span>);</div>
   </div>
 </section>
 
@@ -611,94 +441,76 @@
 <div class="stats-bar">
   <div class="stat">
     <span class="stat-num" data-target="25">0</span>
-    <span class="stat-label">Mashruuc dhammaystay</span>
+    <span class="stat-label">Projects Completed</span>
   </div>
   <div class="stat">
     <span class="stat-num" data-target="3">0</span>
-    <span class="stat-label">Sano waayo-aragnimo</span>
+    <span class="stat-label">Years Experience</span>
   </div>
   <div class="stat">
     <span class="stat-num" data-target="12">0</span>
-    <span class="stat-label">Macmiil faraxsan</span>
+    <span class="stat-label">Happy Clients</span>
   </div>
   <div class="stat">
     <span class="stat-num" data-target="8">0</span>
-    <span class="stat-label">Teknoloji la isticmaalo</span>
+    <span class="stat-label">Technologies Used</span>
   </div>
 </div>
 
-<!-- XIRFAD / SKILLS -->
-<section id="xirfad">
-  <div class="section-label">Xirfadaha</div>
-  <h2 class="section-title">Waxa aan ku xeel-dheer ahay</h2>
-
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Skills</div>
+  <h2 class="section-title">What I'm Good At</h2>
   <div class="skills-grid">
     <div class="skill-card">
       <span class="skill-icon">🖥️</span>
       <div class="skill-name">Frontend Development</div>
-      <div class="skill-desc">Shabakado quroon oo si fiican u shaqeeya. Waxaan isticmaalaa teknolojiyada casriga ah.</div>
+      <div class="skill-desc">Beautiful, performant websites built with modern technologies.</div>
       <div class="skill-tags">
-        <span class="skill-tag">React</span>
-        <span class="skill-tag">Next.js</span>
-        <span class="skill-tag">TypeScript</span>
-        <span class="skill-tag">Tailwind</span>
+        <span class="skill-tag">React</span><span class="skill-tag">Next.js</span>
+        <span class="skill-tag">TypeScript</span><span class="skill-tag">Tailwind</span>
       </div>
     </div>
-
     <div class="skill-card">
       <span class="skill-icon">⚙️</span>
       <div class="skill-name">Backend Development</div>
-      <div class="skill-desc">Server-side oo xoog leh, API-yada degdegga ah, iyo database maamul fiican.</div>
+      <div class="skill-desc">Robust server-side logic, fast APIs, and solid database management.</div>
       <div class="skill-tags">
-        <span class="skill-tag">Node.js</span>
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">PostgreSQL</span>
-        <span class="skill-tag">MongoDB</span>
+        <span class="skill-tag">Node.js</span><span class="skill-tag">Python</span>
+        <span class="skill-tag">PostgreSQL</span><span class="skill-tag">MongoDB</span>
       </div>
     </div>
-
     <div class="skill-card">
       <span class="skill-icon">📱</span>
       <div class="skill-name">Mobile Development</div>
-      <div class="skill-desc">App-yada telefoonka ee iOS iyo Android laba platform labadaba.</div>
+      <div class="skill-desc">Cross-platform apps for both iOS and Android.</div>
       <div class="skill-tags">
-        <span class="skill-tag">React Native</span>
-        <span class="skill-tag">Flutter</span>
-        <span class="skill-tag">Expo</span>
+        <span class="skill-tag">React Native</span><span class="skill-tag">Flutter</span><span class="skill-tag">Expo</span>
       </div>
     </div>
-
     <div class="skill-card">
       <span class="skill-icon">☁️</span>
       <div class="skill-name">DevOps & Cloud</div>
-      <div class="skill-desc">Deploy, CI/CD, iyo cloud infrastructure maamul.</div>
+      <div class="skill-desc">Deployment, CI/CD pipelines, and cloud infrastructure management.</div>
       <div class="skill-tags">
-        <span class="skill-tag">AWS</span>
-        <span class="skill-tag">Docker</span>
-        <span class="skill-tag">GitHub Actions</span>
+        <span class="skill-tag">AWS</span><span class="skill-tag">Docker</span><span class="skill-tag">GitHub Actions</span>
       </div>
     </div>
-
-   
-    </div>
-
     <div class="skill-card">
       <span class="skill-icon">🤖</span>
       <div class="skill-name">AI Integration</div>
-      <div class="skill-desc">AI iyo machine learning ku darsasho app-yaada si ay u casrinaadaan.</div>
+      <div class="skill-desc">Embedding AI and machine learning to modernize applications.</div>
       <div class="skill-tags">
-        <span class="skill-tag">OpenAI API</span>
-        <span class="skill-tag">LangChain</span>
-        <span class="skill-tag">TensorFlow</span>
+        <span class="skill-tag">OpenAI API</span><span class="skill-tag">LangChain</span><span class="skill-tag">TensorFlow</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MASHRUUCYADA / PROJECTS -->
-<section id="mashruuc" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
-  <div class="section-label">Mashruucyada</div>
-  <h2 class="section-title">Shaqooyinkayga ugu muhiimsan</h2>
+<!-- PROJECTS -->
+<section id="projects" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-label">Projects</div>
+  <h2 class="section-title">My Most Important Work</h2>
 
   <div class="projects-grid">
     <div class="project-card">
@@ -707,18 +519,16 @@
         <span style="font-size:2.5rem;">🛒</span>
       </div>
       <div class="project-body">
-        <div class="project-name">Suuq Online — E-Commerce</div>
-        <div class="project-desc">Platform suuq-ganacsiga oo buuxda: xisaab lacag, order-maamul, iyo dashboard ganacsato.</div>
+        <div class="project-name">Online Marketplace — E-Commerce</div>
+        <div class="project-desc">A full e-commerce platform: payment processing, order management, and a merchant dashboard.</div>
         <div class="project-stack" style="margin-top:1rem;">
-          <span class="stack-tag">Next.js</span>
-          <span class="stack-tag">Stripe</span>
-          <span class="stack-tag">PostgreSQL</span>
+          <span class="stack-tag">Next.js</span><span class="stack-tag">Stripe</span><span class="stack-tag">PostgreSQL</span>
         </div>
       </div>
       <div class="project-footer">
         <div class="project-links">
           <a href="#" class="project-link">↗ Live</a>
-          <a href="#" class="project-link">⌥ Kood</a>
+          <a href="https://github.com/khalid-4597" target="_blank" class="project-link">⌥ Code</a>
         </div>
       </div>
     </div>
@@ -729,18 +539,16 @@
         <span style="font-size:2.5rem;">💬</span>
       </div>
       <div class="project-body">
-        <div class="project-name">App Xiriir — Chat App</div>
-        <div class="project-desc">Codsiga xiriirka dhabta ah ee real-time ku shaqeeya, file-sharing, iyo group-chat.</div>
+        <div class="project-name">Chat App — Real-Time Messaging</div>
+        <div class="project-desc">A real-time messaging application with file sharing and group chat support.</div>
         <div class="project-stack" style="margin-top:1rem;">
-          <span class="stack-tag">React</span>
-          <span class="stack-tag">Socket.io</span>
-          <span class="stack-tag">Node.js</span>
+          <span class="stack-tag">React</span><span class="stack-tag">Socket.io</span><span class="stack-tag">Node.js</span>
         </div>
       </div>
       <div class="project-footer">
         <div class="project-links">
-          <a href="#" class="https://khalid-4597.github.io/maqaaltech/index.html">↗ Live</a>
-          <a href="#" class="project-link">⌥ Kood</a>
+          <a href="https://khalid-4597.github.io/maqaaltech/index.html" target="_blank" class="project-link">↗ Live</a>
+          <a href="https://github.com/khalid-4597/maqaaltech" target="_blank" class="project-link">⌥ Code</a>
         </div>
       </div>
     </div>
@@ -751,106 +559,132 @@
         <span style="font-size:2.5rem;">📊</span>
       </div>
       <div class="project-body">
-        <div class="project-name">Nidaam Maaraynta Shirkadda</div>
-        <div class="project-desc">ERP-like system shirkadaha yaryar: shaqaale, lacag, iyo warbixin.</div>
+        <div class="project-name">Business Management System</div>
+        <div class="project-desc">An ERP-like system for small businesses: staff management, finances, and reporting.</div>
         <div class="project-stack" style="margin-top:1rem;">
-          <span class="stack-tag">React</span>
-          <span class="stack-tag">Python</span>
-          <span class="stack-tag">MongoDB</span>
+          <span class="stack-tag">React</span><span class="stack-tag">Python</span><span class="stack-tag">MongoDB</span>
         </div>
       </div>
       <div class="project-footer">
         <div class="project-links">
           <a href="#" class="project-link">↗ Live</a>
-          <a href="#" class="project-link">⌥ Kood</a>
+          <a href="https://github.com/khalid-4597" target="_blank" class="project-link">⌥ Code</a>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- GitHub All Projects Banner -->
+  <div class="github-banner">
+    <div class="github-banner-text">
+      <div class="sub">// All Published Projects</div>
+      <h3>See everything on GitHub</h3>
+      <p>All my open-source work, repos, and published projects in one place.</p>
+    </div>
+    <a href="https://github.com/khalid-4597?tab=repositories" target="_blank" class="btn-primary">
+      🐙 View All Repos →
+    </a>
+  </div>
 </section>
 
-<!-- WAAYO-ARAGNIMO / EXPERIENCE -->
-<section id="waayo">
-  <div class="section-label">Waayo-aragnimada</div>
-  <h2 class="section-title">Jidkayga xirfadeed</h2>
-
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Experience</div>
+  <h2 class="section-title">My Professional Journey</h2>
   <div class="exp-list">
     <div class="exp-item">
-      <div class="exp-date">2023 — Hadda</div>
+      <div class="exp-date">2023 — Present</div>
       <div>
         <div class="exp-role">Senior Full-Stack Developer</div>
-        <div class="exp-company">// Shirkad / Freelance</div>
-        <div class="exp-desc">Mashruucyo badan oo client-ka iyo shirkadaha waaweyn. React, Node.js, iyo AWS isticmaalaya.</div>
+        <div class="exp-company">// Company / Freelance</div>
+        <div class="exp-desc">Multiple projects for clients and large companies. Working with React, Node.js, and AWS.</div>
       </div>
     </div>
-
     <div class="exp-item">
       <div class="exp-date">2021 — 2023</div>
       <div>
         <div class="exp-role">Frontend Developer</div>
         <div class="exp-company">// Tech Startup Mogadishu</div>
-        <div class="exp-desc">UI/UX dhismaha iyo performance-ka hagaajin. App-yada mobile iyo web labadaba.</div>
+        <div class="exp-desc">UI/UX development and performance optimization. Worked on both mobile and web applications.</div>
       </div>
     </div>
-
     <div class="exp-item">
       <div class="exp-date">2019 — 2021</div>
       <div>
         <div class="exp-role">Junior Web Developer</div>
         <div class="exp-company">// Freelance / Internship</div>
-        <div class="exp-desc">Bilowgii xirfadda. Websites-yo yaryar, landing pages, iyo koodka bartay.</div>
+        <div class="exp-desc">Early career. Small websites, landing pages, and learning the fundamentals of code.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- XIRIIR / CONTACT -->
-<section id="xiriir" class="contact-section">
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
   <div class="contact-inner">
     <div class="contact-left">
-      <div class="section-label">Xiriir</div>
-      <h2>Aan wada<br><span style="color:var(--accent)">shaqeyno.</span></h2>
-      <p>Mashruuc cusub, fikrad cusub, ama su'aal kasta — waa la soo xiriiri karaa. Waxaan diyaarsanahay inaan kaa caawiyo.</p>
+      <div class="section-label">Contact</div>
+      <h2>Let's Work<br><span style="color:var(--accent)">Together.</span></h2>
+      <p>A new project, a new idea, or any question — feel free to reach out. I'm ready to help you build something great.</p>
       <div class="contact-links">
-        <a href="mailto:email@example.com" class="contact-link">
+        <a href="mailto:khalidmuhidin@gmail.com" class="contact-link">
           <span class="icon">📧</span>
           <div>
             <div>Email</div>
-            <div class="label">diinisalman.com</div>
+            <div class="label">khalidmuhidin@gmail.com</div>
           </div>
         </a>
-        <a href="https://github.com/khalid-4597" class="contact-link">
+        <a href="https://github.com/khalid-4597" target="_blank" class="contact-link">
           <span class="icon">🐙</span>
           <div>
             <div>GitHub</div>
-            <div class="label">https://github.com/khalid-4597</div>
+            <div class="label">github.com/khalid-4597</div>
           </div>
         </a>
-        <a href="https://www.linkedin.com/in/khalid-diini-780b70354" class="contact-link">
+        <a href="https://www.linkedin.com/in/khalid-diini-780b70354" target="_blank" class="contact-link">
           <span class="icon">💼</span>
           <div>
             <div>LinkedIn</div>
-            <div class="label">linkedin.com/khalidini</div>
+            <div class="label">linkedin.com/in/khalid-diini</div>
+          </div>
+        </a>
+        <!-- UPDATE: Replace 252XXXXXXXX with your real WhatsApp number -->
+        <a href="https://wa.me/252619594597" target="_blank" class="contact-link">
+          <span class="icon">💬</span>
+          <div>
+            <div>WhatsApp</div>
+            <div class="label">Message me on WhatsApp</div>
           </div>
         </a>
       </div>
     </div>
 
+    <!-- FORM — sends email via Gmail using mailto + FormSubmit fallback -->
     <div>
-      <div class="contact-form">
+      <div class="contact-form" id="contactForm">
         <div class="form-group">
-          <label class="form-label">Magacaaga</label>
-          <input type="text" class="form-input" placeholder="Faarax Maxamed">
+          <label class="form-label">Your Name</label>
+          <input type="text" class="form-input" id="fname" placeholder="John Doe" required>
         </div>
         <div class="form-group">
           <label class="form-label">Email</label>
-          <input type="email" class="form-input" placeholder="faarax@email.com">
+          <input type="email" class="form-input" id="femail" placeholder="john@email.com" required>
         </div>
         <div class="form-group">
-          <label class="form-label">Fariintaada</label>
-          <textarea class="form-textarea" placeholder="Waxaan rabaa..."></textarea>
+          <label class="form-label">Subject</label>
+          <input type="text" class="form-input" id="fsubject" placeholder="Project inquiry...">
         </div>
-        <button class="btn-primary" style="cursor:none;" onclick="this.textContent='✓ La diray!'; setTimeout(()=>this.textContent='Dir Fariin →',2000)">Dir Fariin →</button>
+        <div class="form-group">
+          <label class="form-label">Your Message</label>
+          <textarea class="form-textarea" id="fmessage" placeholder="I'd like to..." required></textarea>
+        </div>
+        <div class="form-status" id="formStatus"></div>
+        <button class="btn-primary" id="sendBtn" onclick="sendMessage()" style="cursor:pointer; width:fit-content;">
+          Send Message →
+        </button>
+        <p style="font-family:'Space Mono',monospace; font-size:0.65rem; color:var(--muted); margin-top:0.5rem;">
+          * Clicking will open your email client pre-filled and ready to send.
+        </p>
       </div>
     </div>
   </div>
@@ -858,82 +692,106 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-left">© 2025 — khaliddini Dhammaan xuquuqdu way xidnaayeen.</div>
-  <div class="footer-right">Lagu dhisay <span>HTML + CSS + JS</span> · Ku nool Muqdisho 🇸🇴</div>
+  <div class="footer-left">© 2025 — Khalid Muhidin Mohamed. All rights reserved.</div>
+  <div class="footer-right">Built with <span>HTML + CSS + JS</span> · Based in Mogadishu 🇸🇴</div>
 </footer>
 
 <script>
-  // Cursor
+  // ─── Custom Cursor ───────────────────────────────────────────
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
   let mx = 0, my = 0, rx = 0, ry = 0;
-
   document.addEventListener('mousemove', e => {
     mx = e.clientX; my = e.clientY;
     cursor.style.left = (mx - 6) + 'px';
     cursor.style.top = (my - 6) + 'px';
   });
-
   function animRing() {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    ring.style.left = (rx - 20) + 'px';
-    ring.style.top = (ry - 20) + 'px';
+    rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+    ring.style.left = (rx - 20) + 'px'; ring.style.top = (ry - 20) + 'px';
     requestAnimationFrame(animRing);
   }
   animRing();
-
   document.querySelectorAll('a, button, input, textarea').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursor.style.transform = 'scale(2)';
-      ring.style.width = '60px'; ring.style.height = '60px';
-    });
-    el.addEventListener('mouseleave', () => {
-      cursor.style.transform = 'scale(1)';
-      ring.style.width = '40px'; ring.style.height = '40px';
-    });
+    el.addEventListener('mouseenter', () => { cursor.style.transform = 'scale(2)'; ring.style.width = '60px'; ring.style.height = '60px'; });
+    el.addEventListener('mouseleave', () => { cursor.style.transform = 'scale(1)'; ring.style.width = '40px'; ring.style.height = '40px'; });
   });
 
-  // Typed effect
-  const words = ['Apps casriga ah.', 'Websites quroon.', 'Xalal raqiis ah.', 'Mustaqbal digital.'];
+  // ─── Typed Effect ────────────────────────────────────────────
+  const words = ['Modern Apps.', 'Beautiful Websites.', 'Affordable Solutions.', 'Digital Futures.'];
   let wi = 0, ci = 0, del = false;
-  const el = document.getElementById('typed');
-
+  const typedEl = document.getElementById('typed');
   function type() {
     const w = words[wi];
     if (!del) {
-      el.textContent = w.slice(0, ++ci);
+      typedEl.textContent = w.slice(0, ++ci);
       if (ci === w.length) { del = true; setTimeout(type, 1800); return; }
     } else {
-      el.textContent = w.slice(0, --ci);
+      typedEl.textContent = w.slice(0, --ci);
       if (ci === 0) { del = false; wi = (wi + 1) % words.length; }
     }
     setTimeout(type, del ? 40 : 80);
   }
   setTimeout(type, 1200);
 
-  // Counter animation
+  // ─── Counter Animation ───────────────────────────────────────
   function animCount(el) {
     const target = +el.dataset.target;
-    let count = 0;
-    const step = target / 50;
+    let count = 0; const step = target / 50;
     const timer = setInterval(() => {
       count = Math.min(count + step, target);
-      el.textContent = Math.floor(count) + (el.dataset.suffix || '+');
+      el.textContent = Math.floor(count) + '+';
       if (count >= target) clearInterval(timer);
     }, 30);
   }
-
   const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        animCount(e.target);
-        observer.unobserve(e.target);
-      }
-    });
+    entries.forEach(e => { if (e.isIntersecting) { animCount(e.target); observer.unobserve(e.target); } });
   }, { threshold: 0.5 });
-
   document.querySelectorAll('.stat-num').forEach(el => observer.observe(el));
+
+  // ─── Contact Form → Gmail ─────────────────────────────────────
+  // IMPORTANT: Replace the email below with your real Gmail address
+  const MY_EMAIL = 'khalidmuhidin@gmail.com';
+
+  function sendMessage() {
+    const name    = document.getElementById('fname').value.trim();
+    const email   = document.getElementById('femail').value.trim();
+    const subject = document.getElementById('fsubject').value.trim() || 'Portfolio Contact';
+    const message = document.getElementById('fmessage').value.trim();
+    const status  = document.getElementById('formStatus');
+
+    if (!name || !email || !message) {
+      status.textContent = '⚠ Please fill in all required fields.';
+      status.className = 'form-status error';
+      status.style.display = 'block';
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      status.textContent = '⚠ Please enter a valid email address.';
+      status.className = 'form-status error';
+      status.style.display = 'block';
+      return;
+    }
+
+    const body = `Hi Khalid,\n\nMy name is ${name} and I'd like to get in touch with you.\n\n${message}\n\n---\nSent from: ${email}`;
+    const mailtoLink = `mailto:${MY_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoLink;
+
+    status.textContent = '✓ Your email client has opened — just hit Send!';
+    status.className = 'form-status success';
+    status.style.display = 'block';
+
+    setTimeout(() => {
+      document.getElementById('fname').value = '';
+      document.getElementById('femail').value = '';
+      document.getElementById('fsubject').value = '';
+      document.getElementById('fmessage').value = '';
+      status.style.display = 'none';
+    }, 4000);
+  }
 </script>
 </body>
 </html>
